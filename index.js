@@ -41,26 +41,25 @@ $(function(){
     // .shopping-item__checked {
     //   text-decoration: line-through;
     // }
- $(function(){
+$(function(){
 
-  $('li').click('.shopping-item-toggle', event =>{
-    event.preventDefault();
+  $('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
     
-    $(event.currentTarget).siblings().toggleClass('shopping-item__checked');
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
   });
     
 });
 
 
-// Permanently remove items from the list.
-// $(function(){
+//Permanently remove items from the list.
+$(function(){
 
-//   $('li').click('.shopping-item-delete', event =>{
-//       event.preventDefault();
-//       $(event.currentTarget).remove();
-//     });
+  $('.shopping-list').on('click', '.shopping-item-delete', function(event) {
+      
+      $(this).closest('li').remove();
+    });
 
-// });
+});
 
 // Additional Parameters:
   // Must use a CDN-hosted version of jQuery
